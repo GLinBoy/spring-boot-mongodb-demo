@@ -1,1 +1,3 @@
-spring.application.name=mongodb
+spring:
+  application:
+    name: mongodb
