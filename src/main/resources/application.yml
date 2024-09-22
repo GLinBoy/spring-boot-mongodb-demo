@@ -1,3 +1,11 @@
 spring:
   application:
     name: mongodb
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: spring_mongo
+      username: admin
+      password: password
+      authentication-database: admin
