@@ -6,6 +6,6 @@ spring:
       host: localhost
       port: 27017
       database: spring_mongo
-      username: admin
+      username: root
       password: password
       authentication-database: admin
