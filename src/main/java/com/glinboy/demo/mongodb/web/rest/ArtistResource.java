@@ -26,4 +26,12 @@ public class ArtistResource {
 	public ResponseEntity<Page<ArtistDTO>> getAllArtist(@Parameter(hidden = true) Pageable pageable) {
 		return ResponseEntity.ok(artistService.getAllArtist(pageable));
 	}
+
+	@PostMapping
+	public ResponseEntity<ArtistDTO> saveArtist(@RequestBody ArtistDTO artistDTO,
+			HttpServletRequest request) {
+		ArtistDTO savedArtistDTO = artistService.save(artistDTO);
+		URI location = URI.create(String.format("%s/%s", request.getRequestURI(), savedArtistDTO.getId()));
+		return ResponseEntity.created(location).contentType(MediaType.APPLICATION_JSON).body(savedArtistDTO);
+	}
 }
