@@ -9,4 +9,6 @@ public interface ArtistService {
 
 	Page<ArtistDTO> getAllArtist(Pageable pageable);
 
+	ArtistDTO save(ArtistDTO artistDTO);
+
 }
