@@ -26,4 +26,12 @@ public class ArtistServiceImpl implements ArtistService {
 		return artistRepository.findAll(pageable)
 				.map(e -> mapper.map(e, ArtistDTO.class));
 	}
+
+	@Override
+	public ArtistDTO save(ArtistDTO artistDTO) {
+		Artist artist = mapper.map(artistDTO, Artist.class);
+		artistRepository.save(artist);
+		return mapper.map(artist, ArtistDTO.class);
+	}
+
 }
