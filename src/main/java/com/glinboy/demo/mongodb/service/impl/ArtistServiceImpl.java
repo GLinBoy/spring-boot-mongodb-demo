@@ -1,5 +1,7 @@
 package com.glinboy.demo.mongodb.service.impl;
 
+import java.util.Optional;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -24,6 +26,11 @@ public class ArtistServiceImpl implements ArtistService {
 	@Override
 	public Page<ArtistDTO> getAllArtist(Pageable pageable) {
 		return artistRepository.findAll(pageable)
+				.map(e -> mapper.map(e, ArtistDTO.class));
+	}
+	
+	public Optional<ArtistDTO> getArtist(String id) {
+		return artistRepository.findById(id)
 				.map(e -> mapper.map(e, ArtistDTO.class));
 	}
 
