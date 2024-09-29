@@ -41,4 +41,8 @@ public class ArtistServiceImpl implements ArtistService {
 		return mapper.map(artist, ArtistDTO.class);
 	}
 
+	@Override
+	public void deleteArtist(String id) {
+		artistRepository.deleteById(id);
+	}
 }
