@@ -40,6 +40,11 @@ public class ArtistServiceImpl implements ArtistService {
 		artistRepository.save(artist);
 		return mapper.map(artist, ArtistDTO.class);
 	}
+	
+	@Override
+	public ArtistDTO updateArtist(ArtistDTO artistDTO) {
+		return this.saveArtist(artistDTO);
+	}
 
 	@Override
 	public void deleteArtist(String id) {
