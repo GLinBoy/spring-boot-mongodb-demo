@@ -35,7 +35,7 @@ public class ArtistServiceImpl implements ArtistService {
 	}
 
 	@Override
-	public ArtistDTO save(ArtistDTO artistDTO) {
+	public ArtistDTO saveArtist(ArtistDTO artistDTO) {
 		Artist artist = mapper.map(artistDTO, Artist.class);
 		artistRepository.save(artist);
 		return mapper.map(artist, ArtistDTO.class);

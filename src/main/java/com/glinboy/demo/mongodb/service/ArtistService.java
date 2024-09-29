@@ -13,7 +13,7 @@ public interface ArtistService {
 	
 	Optional<ArtistDTO> getArtist(String id);
 
-	ArtistDTO save(ArtistDTO artistDTO);
+	ArtistDTO saveArtist(ArtistDTO artistDTO);
 	
 	void deleteArtist(String id);
 

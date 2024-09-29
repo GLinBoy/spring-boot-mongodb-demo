@@ -39,7 +39,7 @@ public class ArtistResource {
 	@PostMapping
 	public ResponseEntity<ArtistDTO> saveArtist(@RequestBody ArtistDTO artistDTO,
 			HttpServletRequest request) {
-		ArtistDTO savedArtistDTO = artistService.save(artistDTO);
+		ArtistDTO savedArtistDTO = artistService.saveArtist(artistDTO);
 		URI location = URI.create(String.format("%s/%s", request.getRequestURI(), savedArtistDTO.getId()));
 		return ResponseEntity.created(location).contentType(MediaType.APPLICATION_JSON).body(savedArtistDTO);
 	}
