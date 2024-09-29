@@ -26,6 +26,13 @@ public class ArtistResource {
 	public ResponseEntity<Page<ArtistDTO>> getAllArtist(@Parameter(hidden = true) Pageable pageable) {
 		return ResponseEntity.ok(artistService.getAllArtist(pageable));
 	}
+	
+	@GetMapping("/{id}")
+	public ResponseEntity<ArtistDTO> getArtist(@PathVariable String id) {
+		return artistService.getArtist(id)
+			.map(ResponseEntity::ok)
+			.orElseGet(() -> ResponseEntity.notFound().build());
+	}
 
 	@PostMapping
 	public ResponseEntity<ArtistDTO> saveArtist(@RequestBody ArtistDTO artistDTO,
