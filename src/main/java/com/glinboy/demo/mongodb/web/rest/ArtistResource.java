@@ -41,4 +41,10 @@ public class ArtistResource {
 		URI location = URI.create(String.format("%s/%s", request.getRequestURI(), savedArtistDTO.getId()));
 		return ResponseEntity.created(location).contentType(MediaType.APPLICATION_JSON).body(savedArtistDTO);
 	}
+	
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Void> deleteArtist(@PathVariable String id) {
+		artistService.deleteArtist(id);
+		return ResponseEntity.noContent().build();
+	}
 }
