@@ -2,6 +2,7 @@ package com.glinboy.demo.mongodb.web.rest;
 
 import java.net.URI;
 
+import org.springdoc.core.converters.models.PageableAsQueryParam;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
@@ -23,6 +24,7 @@ public class ArtistResource {
 	private final ArtistService artistService;
 
 	@GetMapping
+	@PageableAsQueryParam
 	public ResponseEntity<Page<ArtistDTO>> getAllArtist(@Parameter(hidden = true) Pageable pageable) {
 		return ResponseEntity.ok(artistService.getAllArtist(pageable));
 	}
