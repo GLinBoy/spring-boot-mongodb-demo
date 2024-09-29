@@ -15,6 +15,8 @@ public interface ArtistService {
 
 	ArtistDTO saveArtist(ArtistDTO artistDTO);
 	
+	ArtistDTO updateArtist(ArtistDTO artistDTO);
+	
 	void deleteArtist(String id);
 
 }
