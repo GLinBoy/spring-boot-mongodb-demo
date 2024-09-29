@@ -44,6 +44,11 @@ public class ArtistResource {
 		return ResponseEntity.created(location).contentType(MediaType.APPLICATION_JSON).body(savedArtistDTO);
 	}
 	
+	@PutMapping
+	public ResponseEntity<ArtistDTO> updateArtist(@RequestBody ArtistDTO artistDTO) {
+		return ResponseEntity.ok(artistService.updateArtist(artistDTO));
+	}
+	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> deleteArtist(@PathVariable String id) {
 		artistService.deleteArtist(id);
