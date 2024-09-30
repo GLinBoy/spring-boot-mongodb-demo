@@ -16,5 +16,7 @@ public interface AlbumService {
 	AlbumDTO saveAlbum(AlbumDTO albumDTO);
 	
 	AlbumDTO updateAlbum(AlbumDTO albumDTO);
+	
+	void deleteAlbum(String id);
 
 }
