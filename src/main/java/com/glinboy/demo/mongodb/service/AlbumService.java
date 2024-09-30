@@ -12,5 +12,7 @@ public interface AlbumService {
 	Page<AlbumDTO> getAllAlbums(Pageable pageable);
 	
 	Optional<AlbumDTO> getAlbum(String id);
+	
+	AlbumDTO saveAlbum(AlbumDTO albumDTO);
 
 }
