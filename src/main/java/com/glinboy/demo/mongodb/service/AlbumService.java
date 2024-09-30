@@ -14,5 +14,7 @@ public interface AlbumService {
 	Optional<AlbumDTO> getAlbum(String id);
 	
 	AlbumDTO saveAlbum(AlbumDTO albumDTO);
+	
+	AlbumDTO updateAlbum(AlbumDTO albumDTO);
 
 }
