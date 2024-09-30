@@ -40,5 +40,10 @@ public class AlbumServiceImpl implements AlbumService {
 		albumRepository.save(album);
 		return mapper.map(album, AlbumDTO.class);
 	}
+	
+	@Override
+	public AlbumDTO updateAlbum(AlbumDTO albumDTO) {
+		return this.saveAlbum(albumDTO);
+	}
 
 }
