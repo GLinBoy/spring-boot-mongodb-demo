@@ -11,7 +11,6 @@ import com.glinboy.demo.mongodb.entity.Album;
 import com.glinboy.demo.mongodb.repository.AlbumRepository;
 import com.glinboy.demo.mongodb.service.AlbumService;
 import com.glinboy.demo.mongodb.service.dto.AlbumDTO;
-import com.glinboy.demo.mongodb.service.dto.ArtistDTO;
 
 import lombok.RequiredArgsConstructor;
 
@@ -44,6 +43,11 @@ public class AlbumServiceImpl implements AlbumService {
 	@Override
 	public AlbumDTO updateAlbum(AlbumDTO albumDTO) {
 		return this.saveAlbum(albumDTO);
+	}
+	
+	@Override
+	public void deleteAlbum(String id) {
+		albumRepository.deleteById(id);
 	}
 
 }
