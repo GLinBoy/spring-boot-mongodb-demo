@@ -44,4 +44,9 @@ public class AlbumResource {
 			.body(savedAlbumDTO);
 	}
 
+	@PutMapping
+	public ResponseEntity<AlbumDTO> updateAlbum(@RequestBody AlbumDTO albumDTO) {
+		return ResponseEntity.ok(albumService.updateAlbum(albumDTO));
+	}
+
 }
