@@ -49,4 +49,10 @@ public class AlbumResource {
 		return ResponseEntity.ok(albumService.updateAlbum(albumDTO));
 	}
 
+	@DeleteMapping("/{id}")
+	public ResponseEntity<Void> deleteAlbum(@PathVariable String id) {
+		albumService.deleteAlbum(id);
+		return ResponseEntity.noContent().build();
+	}
+
 }
